@@ -31,9 +31,6 @@ class CreateOrdersTable extends Migration
             $table->boolean('is_cancel');
             $table->string('cancel_dt')->default(null);
 
-
-
-
             $table->timestamps();
         });
     }

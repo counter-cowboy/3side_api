@@ -43,7 +43,6 @@ class CreateSalesTable extends Migration
             $table->string('brand');
             $table->string('is_storno')->default(null);
 
-
             $table->timestamps();
         });
     }

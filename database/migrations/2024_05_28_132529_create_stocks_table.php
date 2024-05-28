@@ -35,6 +35,7 @@ class CreateStocksTable extends Migration
             $table->unsignedDecimal('price');
             $table->float('discount');
 
+
             $table->timestamps();
         });
     }
