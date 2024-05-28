@@ -1,0 +1,5 @@
+
+/vendor
+# Project exclude paths
+/storage/app/
+/storage/framework/
