@@ -9,6 +9,10 @@ class Sale extends Model
 {
     use HasFactory;
 
+    protected $table = 'sales';
+    protected $primaryKey='id';
+    protected $guarded=false;
+
     protected $hidden = [
         'updated_at',
         'created_at',

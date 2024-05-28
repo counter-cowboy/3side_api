@@ -9,6 +9,10 @@ class Income extends Model
 {
     use HasFactory;
 
+    protected $table = 'incomes';
+    protected $primaryKey = 'id';
+    protected  $guarded=false;
+
     protected $hidden = [
         'updated_at',
         'created_at',
