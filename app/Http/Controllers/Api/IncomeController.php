@@ -12,10 +12,11 @@ use Illuminate\Support\Facades\Http;
 
 class IncomeController extends Controller
 {
-    public function list(IncomeRequest $request) : IncomesCollection
+    public function list(IncomeRequest $request): IncomesCollection
     {
         ini_set('max_execution_time', 240);
         $key = 'E6kUTYrYwZq2tN4QEtyzsbEBk3ie';
+
         $data = $request->validated();
         $dateFrom = $data['dateFrom'];
         $dateTo = $data['dateTo'];
@@ -36,7 +37,7 @@ class IncomeController extends Controller
             foreach ($datum['data'] as $arrData)
                 Income::firstOrCreate($arrData);
 
-        return new IncomesCollection(  IncomeFilter::searchByRequest($request)
-                ->paginate($limit ?? 500));
+        return new IncomesCollection(IncomeFilter::searchByRequest($request)
+            ->paginate($limit ?? 500));
     }
 }

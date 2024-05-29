@@ -16,6 +16,7 @@ class StockController extends Controller
     {
         ini_set('max_execution_time', 240);
         $key = 'E6kUTYrYwZq2tN4QEtyzsbEBk3ie';
+
         $data = $request->validated();
         $dateFrom = $data['dateFrom'];
         $page = $data['page'];
