@@ -7,6 +7,8 @@ Username: sql8709907<br>
 Password: Pcup9deyDD<br>
 Port number: 3306<br>
 
+##### Tables: incomes, orders, stocks, sales.
+
 Примеры запросов:
 
 ##### INCOMES
