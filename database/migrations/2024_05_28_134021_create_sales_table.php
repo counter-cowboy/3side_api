@@ -21,8 +21,8 @@ class CreateSalesTable extends Migration
             $table->string('supplier_article');
             $table->string('tech_size');
             $table->string('barcode');
-            $table->unsignedDecimal('total_price');
-            $table->unsignedFloat('discount_percent');
+            $table->decimal('total_price');
+            $table->float('discount_percent');
             $table->boolean('is_supply');
             $table->boolean('is_realization');
             $table->string('promo_code_discount')->nullable()->default(null);
@@ -34,9 +34,9 @@ class CreateSalesTable extends Migration
             $table->string('sale_id');
             $table->string('odid')->nullable()->default(null);
             $table->unsignedBigInteger('spp');
-            $table->unsignedDecimal('for_pay');
-            $table->unsignedDecimal('finished_price');
-            $table->unsignedDecimal('price_with_disc');
+            $table->decimal('for_pay');
+            $table->decimal('finished_price');
+            $table->decimal('price_with_disc');
             $table->unsignedBigInteger('nm_id');
             $table->string('subject');
             $table->string('category');

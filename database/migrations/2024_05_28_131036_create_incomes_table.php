@@ -23,7 +23,7 @@ class CreateIncomesTable extends Migration
             $table->string('tech_size');
             $table->string('barcode');
             $table->unsignedBigInteger('quantity');
-            $table->unsignedDecimal('total_price');
+            $table->decimal('total_price');
             $table->string('date_close');
             $table->string('warehouse_name');
             $table->unsignedBigInteger('nm_id');

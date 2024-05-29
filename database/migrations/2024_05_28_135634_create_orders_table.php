@@ -19,15 +19,16 @@ class CreateOrdersTable extends Migration
             $table->string('supplier_article');
             $table->string('tech_size');
             $table->string('barcode');
-            $table->unsignedDecimal('total_price');
+            $table->decimal('total_price');
             $table->unsignedFloat('discount_percent');
             $table->string('warehouse_name');
             $table->string('oblast');
             $table->unsignedBigInteger('income_id');
             $table->string('odid')->nullable()->default(null);
             $table->unsignedBigInteger('nm_id');
+            $table->string('subject');
             $table->string('category');
-            $table->string('brand_7501118');
+            $table->string('brand');
             $table->boolean('is_cancel');
             $table->string('cancel_dt')->nullable()->default(null);
 
