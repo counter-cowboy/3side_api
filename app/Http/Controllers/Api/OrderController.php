@@ -38,7 +38,7 @@ class OrderController extends Controller
 
 
         return new OrdersCollection(OrderFilter::searchByRequest($request)
-            ->paginate($request->limit ?? 500)
+            ->paginate($limit ?? 500)
         );
     }
 }
