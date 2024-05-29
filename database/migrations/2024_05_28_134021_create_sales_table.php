@@ -25,14 +25,14 @@ class CreateSalesTable extends Migration
             $table->unsignedFloat('discount_percent');
             $table->boolean('is_supply');
             $table->boolean('is_realization');
-            $table->string('promo_code_discount')->default(null);
+            $table->string('promo_code_discount')->nullable()->default(null);
             $table->string('warehouse_name');
             $table->string('country_name');
             $table->string('oblast_okrug_name');
             $table->string('region_name');
             $table->unsignedBigInteger('income_id');
             $table->string('sale_id');
-            $table->string('odid')->default(null);
+            $table->string('odid')->nullable()->default(null);
             $table->unsignedBigInteger('spp');
             $table->unsignedDecimal('for_pay');
             $table->unsignedDecimal('finished_price');
@@ -41,7 +41,7 @@ class CreateSalesTable extends Migration
             $table->string('subject');
             $table->string('category');
             $table->string('brand');
-            $table->string('is_storno')->default(null);
+            $table->string('is_storno')->nullable()->default(null);
 
             $table->timestamps();
         });

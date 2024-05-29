@@ -24,12 +24,12 @@ class CreateOrdersTable extends Migration
             $table->string('warehouse_name');
             $table->string('oblast');
             $table->unsignedBigInteger('income_id');
-            $table->string('odid')->default(null);
+            $table->string('odid')->nullable()->default(null);
             $table->unsignedBigInteger('nm_id');
             $table->string('category');
             $table->string('brand_7501118');
             $table->boolean('is_cancel');
-            $table->string('cancel_dt')->default(null);
+            $table->string('cancel_dt')->nullable()->default(null);
 
             $table->timestamps();
         });
