@@ -29,8 +29,8 @@ class OrderRequest extends FormRequest
         return [
             'dateFrom' => 'required|date_format:Y-m-d',
             'dateTo' => 'required|date_format:Y-m-d',
-
-            'limit'    => 'numeric|min:1|max:500',
+            'limit' => 'numeric|min:1|max:500',
+            'page' => 'numeric'
         ];
     }
 

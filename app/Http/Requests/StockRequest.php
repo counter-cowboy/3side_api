@@ -34,8 +34,9 @@ class StockRequest extends FormRequest
     public function rules()
     {
         return [
-            'dateFrom' => 'required|date_format:Y-m-d H:i:s|after:yesterday|before:tomorrow',
-            'limit'    => 'numeric|min:1|max:500',
+            'dateFrom' => 'required|date_format:Y-m-d', //only today-date!!!
+            'limit' => 'numeric|min:1|max:500',
+            'page' => 'numeric',
         ];
     }
 
