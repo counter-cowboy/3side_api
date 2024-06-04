@@ -34,7 +34,10 @@ class SaleController extends Controller
 
         foreach ($result as $datum)
             foreach ($datum['data'] as $arrData)
+            {
+                $arrData[]=['account_id'=>1];
                 Sale::firstOrCreate($arrData);
+            }
 
 
         return new SalesCollection(SaleFilter::searchByRequest($request)

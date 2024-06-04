@@ -35,7 +35,10 @@ class IncomeController extends Controller
 
         foreach ($result as $datum)
             foreach ($datum['data'] as $arrData)
+            {
+                $arrData[]=['account_id'=>1];
                 Income::firstOrCreate($arrData);
+            }
 
         return new IncomesCollection(IncomeFilter::searchByRequest($request)
             ->paginate($limit ?? 500));

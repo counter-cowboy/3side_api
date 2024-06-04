@@ -15,6 +15,7 @@ class CreateSalesTable extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('account_id');
             $table->string('g_number');
             $table->string('date');
             $table->string('last_change_date');

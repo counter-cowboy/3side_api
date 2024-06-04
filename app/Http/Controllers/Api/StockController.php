@@ -33,7 +33,10 @@ class StockController extends Controller
 //        dd($result);
         foreach ($result as $datum)
             foreach ($datum['data'] as $arrData)
+            {
+                $arrData[]=['account_id'=>1];
                 Stock::firstOrCreate($arrData);
+            }
 
         return new StocksCollection(StockFilter::searchByRequest($request)
             ->paginate($limit ?? 500));

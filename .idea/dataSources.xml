@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:mysql://sql8.freemysqlhosting.net:3306/sql8709907</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="elmik@localhost" uuid="82d05031-aac8-47f4-9277-ccef167a2ec8">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/elmik</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

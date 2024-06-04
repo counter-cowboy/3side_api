@@ -36,7 +36,10 @@ class OrderController extends Controller
 
         foreach ($result as $datum)
             foreach ($datum['data'] as $arrData)
+            {
+                $arrData[]=['account_id'=>1];
                 Order::firstOrCreate($arrData);
+            }
 
 
         return new OrdersCollection(OrderFilter::searchByRequest($request)
