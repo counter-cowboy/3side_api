@@ -2,41 +2,31 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Apiservice;
+use App\Models\Tokentype;
 use Illuminate\Console\Command;
 
 class CreateApiServiceCommand extends Command
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
-    protected $signature = 'command:name';
+    protected $signature = 'create:apiservice {name} {tokentype_name}';
+    protected $description = 'Creates new apiservice {name} {tokentype_name}';
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
-    protected $description = 'Command description';
-
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         parent::__construct();
     }
 
-    /**
-     * Execute the console command.
-     *
-     * @return int
-     */
     public function handle()
     {
+        $serviceName = $this->argument('name');
+        $tokenType = $this->argument('tokentype_name');
+        $tokenTypeId = Tokentype::where('name', $tokenType)->first()->id;
+
+        Apiservice::firstOrCreate([
+           'name' => $serviceName,
+           'tokentype_id'=> $tokenTypeId
+        ]);
+        $this->info("Created new token type {$tokenType}");
         return 0;
     }
 }

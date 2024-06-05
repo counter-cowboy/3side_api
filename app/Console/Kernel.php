@@ -16,6 +16,9 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
+        $schedule->command('import:incomes Electro')->twiceDailyAt(6,16, 20)->evenInMaintenanceMode();
+        $schedule->command('import:incomes Account')->twiceDailyAt(6,16, 20)->evenInMaintenanceMode();
+
     }
 
     /**

@@ -6,11 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Token extends Model
 {
-    protected $fillable = [
-        'name',
-        'apiservice_id',
-        'tokentype_id',
-    ];
+    protected $guarded=false;
 
     public function Tokentype()
     {

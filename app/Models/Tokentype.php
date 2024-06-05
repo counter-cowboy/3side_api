@@ -6,12 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tokentype extends Model
 {
-    protected $fillable = [
-        'name',
-    ];
+    protected $guarded=false;
 
-    public function Tokens()
+    public function Apiservices()
     {
-        return $this->hasMany(Token::class);
+        return $this->hasOne(Apiservice::class);
     }
 }

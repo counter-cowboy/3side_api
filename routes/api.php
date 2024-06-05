@@ -20,9 +20,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware([AuthMiddleware::class])->group(function () {
 
-    Route::get('sales', [SaleController::class, 'list']);
-    Route::get('stocks', [StockController::class, 'list']);
-    Route::get('orders', [OrderController::class, 'list']);
-    Route::get('incomes', [IncomeController::class, 'list']);
+    Route::get('sales', [SaleController::class, 'list'])->middleware(['throttle:limitadmin']);
+    Route::get('stocks', [StockController::class, 'list'])->middleware(['throttle:limitadmin']);
+    Route::get('orders', [OrderController::class, 'list'])->middleware(['throttle:limitadmin']);
+    Route::get('incomes', [IncomeController::class, 'list'])->middleware(['throttle:limitadmin']);
 });
 
